@@ -1,9 +1,10 @@
 # NetflixGPT
 
 
-- Create React App
-- Configured TailwindCSS
-
+-       Create React App
+-       Configured TailwindCSS
+-       Header Added
+-       Sign In/Sign Up Page
 
 
 # Features
