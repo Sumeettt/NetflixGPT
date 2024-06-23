@@ -1,10 +1,17 @@
 # NetflixGPT
 
 
--       Create React App
--       Configured TailwindCSS
--       Header Added
--       Sign In/Sign Up Page
+- Create React App
+- Configured TailwindCSS
+- Header Added
+- Routing of App
+- Sign In/Sign Up Page
+- Form validation
+- Firebase Setup
+- Implemented Sign-Up/Sign-In logic
+- Created Redux Store with userSlice
+- Implemented Sign-Out logic
+- Implemented Update Profile to add user name while Sign-Up
 
 
 # Features

@@ -1,7 +1,10 @@
+import Header from "./Header";
+
 const Browse = () => {
     return(
-        <div>
-            Browse
+        <div className="flex justify-between items-center">
+            <Header/>
+            
         </div>
     )
 }
