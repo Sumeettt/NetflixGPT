@@ -5,10 +5,12 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../redux/userSlice";
-import { USER_AVATAR } from "../utils/constants";
+import { BG_URL, USER_AVATAR } from "../utils/constants";
+import CopyButton from "./CopyButton";
 
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
+    const [isDemoCredentials, setIsDemoCredentials] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
     const dispatch = useDispatch();
  
@@ -20,6 +22,10 @@ const Login = () => {
     const toggleSignInForm = () => {
         setIsSignInForm(!isSignInForm);
     };
+
+    const toggleDemoCredentials = () => {
+        setIsDemoCredentials(!isDemoCredentials)
+    }
 
     const handleButtonClick = () => {
         const enteredName = name.current ? name.current.value : "";
@@ -76,12 +82,12 @@ const Login = () => {
     return (
         <div className="relative">
             <img
-                src="https://assets.nflxext.com/ffe/siteui/vlv3/51c1d7f7-3179-4a55-93d9-704722898999/be90e543-c951-40d0-9ef5-e067f3e33d16/IN-en-20240610-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+                src= {BG_URL}
                 alt="Background Img"
                 className="brightness-50 absolute"
             />
             <Header />
-            <form onSubmit={(e) => e.preventDefault()} className="absolute w-3/12 bg-black text-white my-36 mx-auto left-0 right-0 bg-opacity-60 p-11">
+            <form onSubmit={(e) => e.preventDefault()} className="absolute w-3/12 bg-black text-white my-36 mx-auto left-0 right-0 bg-opacity-70 p-11">
                 <h1 className="text-3xl font-bold pb-5">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
 
                 {!isSignInForm && (
@@ -108,12 +114,32 @@ const Login = () => {
                 <button className="p-2 my-4 w-full bg-red-700 rounded" onClick={handleButtonClick}>
                     {isSignInForm ? "Sign In" : "Sign Up"}
                 </button>
-                <p className="pt-11">
+                <p className="pt-11 mb-2">
                     <span className="text-gray-400">{isSignInForm ? "New to Netflix? " : "Already a user? "}</span>
                     <span className="cursor-pointer hover:underline" onClick={toggleSignInForm}>
                         {isSignInForm ? "Sign Up Now" : "Sign In"}
                     </span>
                 </p>
+                <p>
+                    <span className="text-gray-400">Demo Credentials? </span>
+                    <span className="text-red-600 cursor-pointer hover:underline" onClick={toggleDemoCredentials}>{isDemoCredentials ? "Hide" : "Show"}</span>
+                </p>
+                {
+                    isDemoCredentials && (
+                        <div className="pt-5">
+                            <p className="flex items-center">
+                                <span className="text-gray-400 mr-2">Email Address: </span> 
+                                <span className="mr-2">demo123@netflix.com</span>
+                                <CopyButton text={"demo123@netflix.com"}/>
+                            </p>
+                            <p className="flex items-center">
+                                <span className="text-gray-400 mr-2">Password: </span>
+                                <span className="mr-2">Demo@123</span>
+                                <CopyButton text={"Demo@123"}/>
+                            </p>
+                        </div>
+                    )
+                }
             </form>
         </div>
     );
