@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants";
 import { useDispatch } from "react-redux";
-import { addTrailerVideo } from '../redux/moviesSlice';
 import { addNowPlayingMovies } from "../redux/moviesSlice";
 
 //custom hook for fetching Now Playing Movies from TMDB

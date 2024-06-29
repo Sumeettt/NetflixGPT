@@ -50,7 +50,7 @@ const Header = () => {
 
     return (
         <div className="absolute top-0 px-24 w-screen flex justify-between items-center bg-gradient-to-b from-black z-10">
-            <img src="/logo.png" alt="logo" className="w-44" />
+            <img src="/logo.png" alt="Logo" className="w-44" />
             {user && (
                 <div 
                     className="flex justify-between items-center h-10 relative"
@@ -62,7 +62,7 @@ const Header = () => {
                     >
                         <img
                             src={user.photoURL}
-                            alt="user"
+                            alt="User"
                             className="w-10 h-10 mr-2 rounded"
                         />
                         {dropDown ? <i className="fa-solid fa-caret-down text-white"></i> : 
