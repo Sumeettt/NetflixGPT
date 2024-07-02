@@ -13,4 +13,3 @@ export const  API_OPTIONS = {
 
 export const POSTER_URL = "https://image.tmdb.org/t/p/w200"
 
-export const OPENAI_KEY = "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";
