@@ -84,9 +84,9 @@ const Login = () => {
             <img
                 src= {BG_URL}
                 alt="Background Img"
-                className="brightness-50 absolute"
+                className="brightness-50 absolute h-screen w-screen object-cover"
             />
-            <Header />
+            <Header isLoginPage={true} />
             <form onSubmit={(e) => e.preventDefault()} className="absolute w-3/12 bg-black text-white my-36 mx-auto left-0 right-0 bg-opacity-70 p-11">
                 <h1 className="text-3xl font-bold pb-5">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
 
@@ -129,13 +129,13 @@ const Login = () => {
                         <div className="pt-5">
                             <p className="flex items-center">
                                 <span className="text-gray-400 mr-2">Email Address: </span> 
-                                <span className="mr-2">demo123@netflix.com</span>
-                                <CopyButton text={"demo123@netflix.com"}/>
+                                <span className="mr-2">demo@netflix.com</span>
+                                <CopyButton text={"demo@netflix.com"}/>
                             </p>
                             <p className="flex items-center">
                                 <span className="text-gray-400 mr-2">Password: </span>
-                                <span className="mr-2">Demo@123</span>
-                                <CopyButton text={"Demo@123"}/>
+                                <span className="mr-2">Demo@123#987</span>
+                                <CopyButton text={"Demo@123#987"}/>
                             </p>
                         </div>
                     )

@@ -4,10 +4,10 @@ const MovieCard = (props) => {
     const {poster} = props;
 
     return (
-        <div className="w-48 pr-4">
-            <img src={POSTER_URL + poster} alt="Movie Poster"/>
+        <div className="w-40 cursor-pointer  transition-transform duration-300 hover:scale-105">
+            <img src={POSTER_URL + poster} alt="Movie Poster" className="rounded"/>
         </div>
     )
 }
 
-export default MovieCard
+export default MovieCard;

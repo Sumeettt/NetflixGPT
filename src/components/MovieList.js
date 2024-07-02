@@ -1,23 +1,27 @@
 import MovieCard from './MovieCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const MovieList = (props) => {
     const { title, movies } = props;
 
-    console.log(movies)
-
     return (
-        <div className="p-4">
-            <h1 className="text-3xl font-medium py-6 text-white">{title}</h1>
+        <div className="px-16 mb-6">
+            <h1 className="text-2xl font-medium py-6 text-white">{title}</h1>
             {movies && (
-                <div className="flex overflow-x-scroll no-scrollbar">
-                    <div className="flex">
-                        {movies.map(eachMovie => <MovieCard key={eachMovie.id} poster={eachMovie.poster_path}/>)}
-                    </div>
-                </div>
+                <Swiper
+                    spaceBetween={15}
+                    slidesPerView="auto"   
+                >
+                    {movies.map(eachMovie => (
+                        <SwiperSlide key={eachMovie.id} style={{ width: '180px' }}>
+                            <MovieCard poster={eachMovie.poster_path} />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             )}
         </div>
     );
 };
 
 export default MovieList;
-
