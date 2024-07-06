@@ -1,14 +1,20 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTrailerVideoVolume } from "../redux/moviesSlice";
+import { useNavigate } from "react-router-dom";
 
 const VideoTitle = (props) => {
-    const {title, overview} = props;
+    const {title, overview, movieId} = props;
 
     const dispatch = useDispatch();
     const isMuted = useSelector(store => store.movies.isTrailerVideoVolumeMuted)
+    const navigate = useNavigate();
 
     const handleValumeClick = () => {
         dispatch(toggleTrailerVideoVolume());
+    }
+
+    const handlePlayButton = () => {
+       navigate(`/watch/${movieId}`)
     }
 
     return (
@@ -17,7 +23,7 @@ const VideoTitle = (props) => {
             <p className="text-lg w-1/3 py-6">{overview}</p>
             <div className="flex justify-between items-center">
                 <div>
-                    <button className="mr-5 bg-white text-black py-2 px-8 rounded inline-flex justify-center items-center hover:opacity-80">
+                    <button onClick={handlePlayButton} className="mr-5 bg-white text-black py-2 px-8 rounded inline-flex justify-center items-center hover:opacity-80">
                         <i className="fa-solid fa-play text-3xl mr-3"></i> 
                         <span className="text-xl font-medium ">Play</span>
                     </button>

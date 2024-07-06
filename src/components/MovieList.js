@@ -1,9 +1,12 @@
 import MovieCard from './MovieCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { Link } from 'react-router-dom';
 
 const MovieList = (props) => {
     const { title, movies } = props;
+
+    console.log(movies);
 
     return (
         <div className="px-16 mb-6">
@@ -15,7 +18,9 @@ const MovieList = (props) => {
                 >
                     {movies.map(eachMovie => (
                         <SwiperSlide key={eachMovie.id} style={{ width: '180px' }}>
-                            <MovieCard poster={eachMovie.poster_path} />
+                            <Link to={"/watch/" + eachMovie.id}>
+                                <MovieCard poster={eachMovie.poster_path} />
+                            </Link>
                         </SwiperSlide>
                     ))}
                 </Swiper>

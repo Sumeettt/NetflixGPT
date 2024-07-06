@@ -1,7 +1,7 @@
-import { BG_URL } from "../utils/constants"
+
 import GptSearchBar from "./GptSearchBar"
 
-const GptSearch = () => {
+const GptSearchPage = () => {
   return (
     <div className="w-screen h-screen relative bg-gradient-to-b from-black to to-red-600">
         
@@ -10,4 +10,4 @@ const GptSearch = () => {
   )
 }
 
-export default GptSearch
+export default GptSearchPage

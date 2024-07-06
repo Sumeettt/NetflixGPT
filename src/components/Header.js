@@ -7,12 +7,13 @@ import { addUser, removeUser } from "../redux/userSlice";
 import { onAuthStateChanged } from "firebase/auth";
 import { toggleGptSearchView } from "../redux/gptSlice";
 
-const Header = ({isLoginPage}) => {
+const Header = () => {
     const [dropDown, setDropDown] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const user = useSelector(store => store.user);
+    const isVideo = useSelector(store => store.movies.videoPlayerVideo);
     const isGptSearch = useSelector(store => store.gpt.showGptSearch);
 
     useEffect(() => {
@@ -38,6 +39,7 @@ const Header = ({isLoginPage}) => {
     const handleSignOut = () => {
         signOut(auth).then(() => {
             // The onAuthStateChanged side effect will be triggered.
+            setDropDown(false);
         }).catch((error) => {
             console.log("Sign-out Failed: " + error);
         });
@@ -71,9 +73,14 @@ const Header = ({isLoginPage}) => {
         }
     }, []);
 
+    const handleLogoClick = () => {
+        if(user) navigate("/browse");
+        
+    }
+
     return (
-        <div className={`fixed top-0 px-24 py-1 w-screen flex justify-between items-center z-20 ${isScrolled ? "bg-black" : "bg-gradient-to-b from-black"} `}>
-            <img src="/logo.png" alt="Logo" className={`${isLoginPage ? "w-44" : "w-36"}`} />
+        <div className={`fixed top-0 px-24 py-1 w-screen flex justify-between items-center z-20 ${isScrolled ? "bg-black" : "bg-gradient-to-b from-black"} ${isVideo ? "hidden" : "block"} `}>
+            <img onClick={handleLogoClick} src="/logo.png" alt="Logo" className={`${user ? "w-36" : "w-44"}`} />
             {user && (
                 <div className="flex justify-center items-center">
                     <button className="text-white mr-3 py-2 w-32 bg-blue-800 rounded font-medium hover:bg-blue-700"

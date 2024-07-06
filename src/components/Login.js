@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import Header from "./Header";
 import checkValidData from "../utils/validation";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
@@ -86,7 +85,6 @@ const Login = () => {
                 alt="Background Img"
                 className="brightness-50 absolute h-screen w-screen object-cover"
             />
-            <Header isLoginPage={true} />
             <form onSubmit={(e) => e.preventDefault()} className="absolute w-3/12 bg-black text-white my-36 mx-auto left-0 right-0 bg-opacity-70 p-11">
                 <h1 className="text-3xl font-bold pb-5">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
 
