@@ -12,7 +12,7 @@ const useUpComingMovies = () => {
 
     useEffect(()=> {
         if(!upComingMovies) getUpComingMovies();
-    },[])
+    },[getUpComingMovies, upComingMovies])
 
     const getUpComingMovies = async () => {
         const data = await fetch('https://api.themoviedb.org/3/movie/upcoming?page=1', API_OPTIONS);

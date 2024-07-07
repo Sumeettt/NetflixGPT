@@ -12,7 +12,7 @@ const useTopRatedMovies = () => {
 
     useEffect(()=> {
         if(!topRatedMovies) getTopRatedMovies();
-    },[])
+    },[getTopRatedMovies, getTopRatedMovies])
 
     const getTopRatedMovies = async () => {
         const data = await fetch('https://api.themoviedb.org/3/movie/top_rated?page=1', API_OPTIONS);
