@@ -28,7 +28,7 @@ const moviesSlice = createSlice({
             state.trailerVideo = action.payload;
         },
         toggleTrailerVideoVolume: (state, action) => {
-            state.isTrailerVideoVolumeMuted = !state.isTrailerVideoVolumeMuted
+            state.isTrailerVideoVolumeMuted = !state.isTrailerVideoVolumeMuted;
         },
         addVideoPlayerVideo: (state, action) => {
             state.videoPlayerVideo = action.payload;

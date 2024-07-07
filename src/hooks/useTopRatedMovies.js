@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTopRatedMovies } from "../redux/moviesSlice";
 
 //custom hook for fetching Top Rated Movies from TMDB
@@ -8,8 +8,10 @@ import { addTopRatedMovies } from "../redux/moviesSlice";
 const useTopRatedMovies = () => {
     const dispatch = useDispatch();
 
+    const topRatedMovies = useSelector(store => store.movies.topRatedMovies);
+
     useEffect(()=> {
-        getTopRatedMovies();
+        if(!topRatedMovies) getTopRatedMovies();
     },[])
 
     const getTopRatedMovies = async () => {

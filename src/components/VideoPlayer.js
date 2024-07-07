@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import useVideoPlayer from "../hooks/useVideoPlayer";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import Spinner from "./Spinner";
 
 const VideoPlayer = () => {
   const { movieId } = useParams();
@@ -20,18 +21,19 @@ const VideoPlayer = () => {
 
 
   return (
-    playerVideo && (
+    playerVideo ? (
       <div className="w-full h-full bg-black">
         <iframe 
           className="w-full h-screen"
           src={`https://www.youtube.com/embed/${playerVideo.key}?autoplay=1&mute=0&controls=1&rel=0&iv_load_policy=3&modestbranding=1`}
           title="YouTube video player" 
           loading="lazy"
+          allowFullScreen
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         >
         </iframe>
       </div>
-    ) 
+    ) : <Spinner/>
   );
 }
 

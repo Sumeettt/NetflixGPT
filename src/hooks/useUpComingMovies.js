@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUpComingMovies } from "../redux/moviesSlice";
 
 //custom hook for fetching UpComing Movies from TMDB
@@ -8,8 +8,10 @@ import { addUpComingMovies } from "../redux/moviesSlice";
 const useUpComingMovies = () => {
     const dispatch = useDispatch();
 
+    const upComingMovies = useSelector(store => store.movies.upComingMovies);
+
     useEffect(()=> {
-        getUpComingMovies();
+        if(!upComingMovies) getUpComingMovies();
     },[])
 
     const getUpComingMovies = async () => {

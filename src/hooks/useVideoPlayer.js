@@ -37,7 +37,7 @@ const useVideoPlayer = (movieId) => {
         return () => {
             dispatch(removeVideoPlayerVideo());
         }
-    }, [movieId, dispatch]);
+    }, []);
 
     return { loading };
 }

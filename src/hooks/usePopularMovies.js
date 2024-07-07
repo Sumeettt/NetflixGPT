@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addPopularMovies } from "../redux/moviesSlice";
 
 //custom hook for fetching Pupular Movies from TMDB
@@ -8,8 +8,10 @@ import { addPopularMovies } from "../redux/moviesSlice";
 const usePopularMovies = () => {
     const dispatch = useDispatch();
 
+    const popularMovies = useSelector(store => store.movies.popularMovies);
+
     useEffect(()=> {
-        getPopularMovies();
+        if(!popularMovies) getPopularMovies();
     },[])
 
     const getPopularMovies = async () => {

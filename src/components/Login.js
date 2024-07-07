@@ -77,16 +77,17 @@ const Login = () => {
                 });
         }
     };
+    
 
     return (
-        <div className="relative">
-            <img
+        <div className="relative h-screen bg-black">
+            <img 
                 src= {BG_URL}
                 alt="Background Img"
-                className="brightness-50 absolute h-screen w-screen object-cover"
+                className="brightness-50 absolute h-screen w-screen object-cover hidden md:block"
             />
-            <form onSubmit={(e) => e.preventDefault()} className="absolute w-3/12 bg-black text-white my-36 mx-auto left-0 right-0 bg-opacity-70 p-11">
-                <h1 className="text-3xl font-bold pb-5">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
+            <form onSubmit={(e) => e.preventDefault()} className="absolute px-3 md:px-10 w-full md:w-5/12 xl:w-3/12 bg-black text-white my-24 xl:my-32 mx-auto left-0 right-0 md:bg-opacity-70 p-11">
+                <h1 className="text-xl md:text-2xl font-bold md:pb-3">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
 
                 {!isSignInForm && (
                     <input
@@ -99,7 +100,7 @@ const Login = () => {
                 <input
                     placeholder="Email Address"
                     type="text"
-                    className="p-2 my-2 w-full border-white border-[1px] border-solid bg-transparent rounded"
+                    className="p-2 my-2 w-full border-white border-[1px] border-solid bg-transparent rounded "
                     ref={email}
                 />
                 <input
@@ -109,7 +110,7 @@ const Login = () => {
                     ref={password}
                 />
                 <p className="text-red-600">{errorMessage}</p>
-                <button className="p-2 my-4 w-full bg-red-700 rounded" onClick={handleButtonClick}>
+                <button className="p-2 my-2 w-full bg-red-700 rounded" onClick={handleButtonClick}>
                     {isSignInForm ? "Sign In" : "Sign Up"}
                 </button>
                 <p className="pt-11 mb-2">

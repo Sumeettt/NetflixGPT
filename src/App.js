@@ -1,8 +1,8 @@
 import Login from "./components/Login"
 import Browse from "./components/Browse";
 import VideoPlayer from "./components/VideoPlayer";
-import ErrorVideoNotAvailable from "./components/ErrorVideoNotAvailable";
-import Error from "./components/Error";
+import ErrorVideoNotAvailable from "./components/error/ErrorVideoNotAvailable";
+import Error from "./components/error/Error";
 import Header from './components/Header';
 import { Outlet, createBrowserRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -13,7 +13,7 @@ function App() {
   const isGptSearch = useSelector(store => store.gpt.showGptSearch);
 
   return (
-    <div>
+    <div className="h-screen w-screen bg-black">
       <Header/>
       <Outlet/>
     </div>

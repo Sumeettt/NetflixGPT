@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addNowPlayingMovies } from "../redux/moviesSlice";
 
 //custom hook for fetching Now Playing Movies from TMDB
@@ -8,8 +8,10 @@ import { addNowPlayingMovies } from "../redux/moviesSlice";
 const useNowPlayingMovies = () => {
     const dispatch = useDispatch();
 
+    const nowPlayingMovies = useSelector(store => store.movies.nowPlayingMovies);
+
     useEffect(()=> {
-        getNowPlayingMovies();
+        if(!nowPlayingMovies) getNowPlayingMovies();
     },[])
 
     const getNowPlayingMovies = async () => {
