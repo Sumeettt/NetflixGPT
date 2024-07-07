@@ -5,7 +5,6 @@ import ErrorVideoNotAvailable from "./components/error/ErrorVideoNotAvailable";
 import Error from "./components/error/Error";
 import Header from './components/Header';
 import { Outlet, createBrowserRouter } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 
 function App() {
