@@ -7,8 +7,6 @@ import { useEffect, useState } from 'react';
 const MovieList = (props) => {
     const { title, movies } = props;
     const [width, setWidth] = useState("")
-
-    console.log(movies);
     
     useEffect(() => {
         const handleResize = () => {

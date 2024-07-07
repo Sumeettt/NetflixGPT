@@ -69,7 +69,7 @@ const Login = () => {
             // Sign-In logic
             signInWithEmailAndPassword(auth, enteredEmail, enteredPassword)
                 .then((userCredential) => {
-                    const user = userCredential.user;
+                    //const user = userCredential.user;
                 })
                 .catch((error) => {
                     console.log(`${error.code} - ${error.message}`);

@@ -9,9 +9,6 @@ import { useSelector } from "react-redux";
 
 
 function App() {
-
-  const isGptSearch = useSelector(store => store.gpt.showGptSearch);
-
   return (
     <div className="h-screen w-screen bg-black">
       <Header/>
