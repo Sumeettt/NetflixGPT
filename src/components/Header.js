@@ -83,7 +83,7 @@ const Header = () => {
     };
 
     return (
-        <div className={`fixed top-0 px-3 md:px-8 xl:px-16 py-2 w-screen flex justify-between items-center z-20 ${isScrolled ? "bg-black bg-opacity-80" : "bg-gradient-to-b from-black"} ${isVideo ? "hidden" : "block"} `}>
+        <div className={`fixed top-0 px-3 md:px-8 xl:px-16 py-1 w-screen flex justify-between items-center z-20 ${isScrolled && user ? "bg-black bg-opacity-80" : "bg-gradient-to-b from-black"} ${isVideo ? "hidden" : "block"} `}>
             <img onClick={handleLogoClick} src="/logo.png" alt="Logo" className={`hidden md:block ${user ? "w-36" : "w-44"}`} />
             <img onClick={handleLogoClick} src="/logo2.png" alt="Logo" className={`block md:hidden ${user ? "w-7" : "w-8"}`} />
             {user && (

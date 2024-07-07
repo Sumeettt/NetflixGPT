@@ -84,9 +84,9 @@ const Login = () => {
             <img 
                 src= {BG_URL}
                 alt="Background Img"
-                className="brightness-50 absolute h-screen w-screen object-cover hidden md:block"
+                className="brightness-50 absolute min-h-screen w-screen object-cover hidden md:block"
             />
-            <form onSubmit={(e) => e.preventDefault()} className="absolute px-3 md:px-10 w-full md:w-5/12 xl:w-3/12 bg-black text-white my-24 xl:my-32 mx-auto left-0 right-0 md:bg-opacity-70 p-11">
+            <form onSubmit={(e) => e.preventDefault()} className="absolute px-3 md:px-10 w-full md:w-6/12 xl:w-4/12 2xl:w-3/12 bg-black text-white my-24 xl:my-32 mx-auto left-0 right-0 md:bg-opacity-70 p-11">
                 <h1 className="text-xl md:text-2xl font-bold md:pb-3">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
 
                 {!isSignInForm && (
