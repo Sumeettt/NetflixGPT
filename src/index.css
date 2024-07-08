@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.trending-number {
+    -webkit-text-stroke: 5px #595959;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: black;
+}
