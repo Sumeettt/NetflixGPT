@@ -28,7 +28,7 @@
 </div>
 
 <div style="text-align: right;">
-    <img src="https://github.com/Sumeettt/NetflixWeb/blob/main/public/assets/LoginBrowseView.png" alt="login browse view" style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)" />
+    <img src="https://github.com/Sumeettt/NetflixWeb/blob/main/public/assets/BrowseMobileView.png" alt="browse mobile view" style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)" />
 </div>
 
 ------------------
