@@ -93,20 +93,20 @@ const Login = () => {
                     <input
                         placeholder="Full Name"
                         type="text"
-                        className="p-2 my-2 w-full border-white border-[1px] border-solid bg-transparent rounded"
+                        className="p-2 my-2 w-full border-white border-[1px] border-solid bg-transparent outline-none rounded"
                         ref={name}
                     />
                 )}
                 <input
                     placeholder="Email Address"
                     type="text"
-                    className="p-2 my-2 w-full border-white border-[1px] border-solid bg-transparent rounded "
+                    className="p-2 my-2 w-full border-white border-[1px] border-solid bg-transparent outline-none rounded "
                     ref={email}
                 />
                 <input
                     placeholder="Password"
                     type="password"
-                    className="p-2 my-2 w-full border-white border-[1px] border-solid bg-transparent rounded"
+                    className="p-2 my-2 w-full border-white border-[1px] border-solid bg-transparent outline-none rounded"
                     ref={password}
                 />
                 <p className="text-red-600">{errorMessage}</p>
