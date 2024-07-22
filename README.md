@@ -2,7 +2,7 @@
 
 # NetflixWeb
 
-### Tech Stacks: React.js, Redux Toolkit, Tailwind CSS, Firebase, TMDb APIs
+### Tech Stack: React.js, Redux Toolkit, Tailwind CSS, Firebase, TMDb APIs
 
 # Features
 
